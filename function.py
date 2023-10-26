@@ -1,4 +1,6 @@
 def fibonacci(n):
+    if not (int(n) == n):
+        return []
     array = []
     for i in range(n):
         if i == 0: array.append(1)
@@ -7,7 +9,11 @@ def fibonacci(n):
     return array
 
 
-def sort(array):
+def sort(nums: str):
+    array = []
+    for num in nums.split():
+        array.append(int(num))
+
     for i in range(len(array) - 1):
         for j in range(len(array) - 1):
             if array[j] > array[j + 1]:
@@ -20,6 +26,6 @@ def calc(a, b, operator):
         operator == "+": a + b,
         operator == "-": a - b,
         operator == "/": a / b,
-        operator == "*": a * b
+        operator == "*": a * b,
+        operator is str: None
     }[True]
-
